@@ -24,7 +24,7 @@ var posts = [];
 //Home Page
 app.get("/", function(req, res) {
 
-    res.render("home", {
+    res.render("home.ejs", {
         homeContent: homeStartingContent,
         posts: posts
     });
@@ -59,21 +59,21 @@ app.get("/posts/:postName", function(req, res) {
 //About Page
 app.get("/about", function(req, res) {
     let aboutHeading = "About"
-    res.render("about", { aboutPageContent: aboutContent, pageHeading: aboutHeading });
+    res.render("about.ejs", { aboutPageContent: aboutContent, pageHeading: aboutHeading });
 
 });
 
 //Contact Page
 app.get("/contact", function(req, res) {
     let contactHeading = "Contact"
-    res.render("contact", { contactPageContent: contactContent, pageHeading: contactHeading });
+    res.render("contact.ejs", { contactPageContent: contactContent, pageHeading: contactHeading });
 
 });
 
 //Compose Page
 app.get("/compose", function(req, res) {
     let composeHeading = "Compose"
-    res.render("compose", { composePageHeading: composeHeading });
+    res.render("compose.ejs", { composePageHeading: composeHeading });
 
 });
 
@@ -91,7 +91,7 @@ app.post("/compose", function(req, res) {
 });
 
 app.get("/post", function(req, res) {
-    res.render("post");
+    res.render("post.ejs");
 
 })
 
